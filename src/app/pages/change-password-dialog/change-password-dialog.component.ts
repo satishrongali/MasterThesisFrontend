@@ -14,6 +14,15 @@ export class ChangePasswordDialogComponent {
 
   constructor(private route: ActivatedRoute, private userService: UserService, private router: Router) { }
 
+  ngOnInit() {
+    this.route.params.subscribe(
+      (params: Params) => {
+        this.userId = params.userId;
+        console.log(params.userId);
+      }
+    )
+  }
+  
   onSaveClick(Pw: string): void {
     this.userService.changeUserPw(this.userId, Pw)
       .subscribe(response => {

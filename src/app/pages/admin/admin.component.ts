@@ -15,6 +15,8 @@ export class AdminComponent implements OnInit{
   users: any;
   page_num: number = 1;
   items_per_page: number = 6;
+  selectedUserId!: string;
+  isChangePasswordModalOpen = false;
 
   constructor(private authService: AuthService, private userService: UserService, private route: ActivatedRoute, private router: Router) {}
 
@@ -30,14 +32,16 @@ export class AdminComponent implements OnInit{
     this.router.navigate(['admin/users/', userId, 'change-email']);
   }
 
-  onUserPwChangeClick(userId: string, newPw: string) {
+  onUserPwChangeClick(userId: string) {
     // perform pw change
-    console.log("pw change button clicked");
+    // console.log("pw change button clicked");
+    // this.selectedUserId = userId;
+    // this.isChangePasswordModalOpen = true;
+    this.router.navigate(['admin/users/', userId, 'change-password']);
+  }
 
-    this.userService.changeUserPw(userId, newPw).subscribe((res: any) => {
-      console.log(res);
-      console.log("password updated sucessfully");
-    })
+  closeChangePasswordModal() {
+    this.isChangePasswordModalOpen = false;
   }
 
   onUserMakeAdminClick(id: string) {

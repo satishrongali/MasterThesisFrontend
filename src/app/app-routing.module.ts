@@ -12,11 +12,13 @@ import { AuthGuardService as AuthGuard } from './auth-guard.service';
 import { AdminComponent } from './pages/admin/admin.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ChangeEmailComponent } from './pages/admin/change-email/change-email.component';
+import { ChangePasswordDialogComponent } from './pages/change-password-dialog/change-password-dialog.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/lists', pathMatch: 'full' },
   { path: 'admin', component: AdminComponent },
   { path: 'admin/users/:userId/change-email', component: ChangeEmailComponent },
+  { path: 'admin/users/:userId/change-password', component: ChangePasswordDialogComponent },
   { path: 'new-list', component: NewListComponent, canActivate: [AuthGuard] },
   { path: 'edit-list/:listId', component: EditListComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LoginPageComponent },
