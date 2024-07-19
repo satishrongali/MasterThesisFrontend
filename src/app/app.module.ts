@@ -18,6 +18,7 @@ import { AdminComponent } from './pages/admin/admin.component';
 import { AboutComponent } from './pages/about/about.component';
 import { ChangeEmailComponent } from './pages/admin/change-email/change-email.component';
 import { NgxPaginationModule } from 'ngx-pagination';
+import { ChangePasswordDialogComponent } from './pages/change-password-dialog/change-password-dialog.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +33,8 @@ import { NgxPaginationModule } from 'ngx-pagination';
     ProfileComponent,
     AdminComponent,
     AboutComponent,
-    ChangeEmailComponent
+    ChangeEmailComponent,
+    ChangePasswordDialogComponent
   ],
   imports: [
     BrowserModule,

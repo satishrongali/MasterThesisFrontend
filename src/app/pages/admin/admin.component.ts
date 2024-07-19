@@ -3,6 +3,7 @@ import { AuthService } from 'src/app/auth.service';
 import Swal from 'sweetalert2';
 import { UserService } from 'src/app/user.service';
 import { ActivatedRoute, Params, Router } from '@angular/router';
+import { ChangePasswordDialogComponent } from '../change-password-dialog/change-password-dialog.component';
 
 @Component({
   selector: 'app-admin',
@@ -33,10 +34,10 @@ export class AdminComponent implements OnInit{
     // perform pw change
     console.log("pw change button clicked");
 
-    // this.userService.changeUserPw(userId, newPw).subscribe((res: any) => {
-    //   console.log(res);
-    //   console.log("password updated sucessfully");
-    // })
+    this.userService.changeUserPw(userId, newPw).subscribe((res: any) => {
+      console.log(res);
+      console.log("password updated sucessfully");
+    })
   }
 
   onUserMakeAdminClick(id: string) {

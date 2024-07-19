@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { WebRequestService } from './web-request.service';
 import { shareReplay, tap } from 'rxjs/operators';
 import { HttpClient, HttpResponse } from '@angular/common/http';
+import { Observable } from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
@@ -44,6 +45,10 @@ export class AuthService {
         console.log("Password changed successfully");
       })
     )
+  }
+
+  changeUserPassword(userId: string, newPassword: string): Observable<any> {
+    return this.http.patch(`/admin/users/${userId}/password`, { password: newPassword });
   }
 
   logout(){ 
