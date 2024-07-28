@@ -1,0 +1,9 @@
+{
+  "projects": {
+    "default": "satish-masterthesis",
+    "masterthesis": "satish-masterthesis"
+  },
+  "targets": {},
+  "etags": {},
+  "dataconnectEmulatorConfig": {}
+}
